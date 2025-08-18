@@ -40,13 +40,15 @@ function PhoneForm() {
         >
           Join Waitlist
         </button>
-        <button
-          type="button"
-          className="flex-1 px-6 py-2 rounded-lg bg-transparent border border-white text-white text-xs font-light hover:bg-white/10 transition"
+        <a
+          href="https://theflamingostoreofficial.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex-1 px-6 py-2 rounded-lg bg-transparent border border-white text-white text-xs font-light hover:bg-white/10 transition text-center"
           style={{ fontFamily: "Noto Sans, sans-serif", fontWeight: 300 }}
         >
           Continue Shopping
-        </button>
+        </a>
       </div>
     </form>
   );
