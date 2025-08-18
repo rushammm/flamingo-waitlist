@@ -8,7 +8,7 @@ function PhoneForm() {
     const phone = (form.elements.namedItem("phone") as HTMLInputElement).value;
     const data = { phone };
 
-    const response = await fetch("https://your-n8n-domain/webhook/phone-form", {
+    const response = await fetch("http://localhost:5678/webhook-test/aa06e00b-c11d-4693-a4b1-0e9d886689af", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
