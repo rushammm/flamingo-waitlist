@@ -75,10 +75,30 @@ function Page() {
           {/* Excitement Question */}
           <div className="flex flex-col items-center gap-6 w-full mt-8">
             <p className="text-lg text-white font-semibold" style={{ fontFamily: 'Noto Sans, sans-serif', fontWeight: 900 }}>How excited are you?</p>
-            <div className="flex flex-col gap-4 w-full max-w-xs">
-              <button className="w-full py-2 rounded-lg bg-white/80 text-gray-700 font-bold text-base shadow hover:bg-white transition" style={{ fontFamily: 'Noto Sans, sans-serif', fontWeight: 900 }} onClick={throwConfetti}>very much!</button>
-              <button className="w-full py-2 rounded-lg bg-white/80 text-gray-700 font-bold text-base shadow hover:bg-white transition" style={{ fontFamily: 'Noto Sans, sans-serif', fontWeight: 900 }} onClick={throwConfetti}>i can&apos;t wait!</button>
+            <div className="flex flex-row gap-4 justify-center">
+              <button className="px-4 py-1 rounded-lg bg-transparent text-white font-bold text-sm border border-white hover:bg-white/10 transition" style={{ fontFamily: 'Noto Sans, sans-serif', fontWeight: 900 }} onClick={throwConfetti}>very much!</button>
+              <button className="px-4 py-1 rounded-lg bg-transparent text-white font-bold text-sm border border-white hover:bg-white/10 transition" style={{ fontFamily: 'Noto Sans, sans-serif', fontWeight: 900 }} onClick={throwConfetti}>i can&apos;t wait!</button>
             </div>
+          
+          </div>
+          {/* Phone number input for waitlist */}
+          <div className="flex flex-col items-center gap-2 w-full mt-8">
+            <label htmlFor="phone" className="text-base text-white" style={{ fontFamily: 'Noto Sans, sans-serif', fontWeight: 400 }}></label>
+            <input
+              id="phone"
+              type="tel"
+              placeholder="Phone number"
+              className="w-full max-w-xs px-4 py-2 rounded-lg border border-white bg-transparent text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white"
+              style={{ fontFamily: 'Noto Sans, sans-serif', fontWeight: 400 }}
+            />
+              <div className="flex flex-row items-center justify-center gap-4 mt-2">
+                <button className="px-6 py-2 rounded-lg bg-white/90 text-gray-900 font-bold text-sm shadow hover:bg-white transition" style={{ fontFamily: 'Noto Sans, sans-serif', fontWeight: 600 }}>
+                  Join Waitlist
+                </button>
+                <button className="px-6 py-2 rounded-lg bg-transparent text-white font-bold text-sm border border-white hover:bg-white/10 transition" style={{ fontFamily: 'Noto Sans, sans-serif', fontWeight: 500 }}>
+                  Continue Shopping
+                </button>
+              </div>
           </div>
         </div>
       </section>
