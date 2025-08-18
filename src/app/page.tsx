@@ -39,6 +39,20 @@ function Countdown() {
 }
 
 function Page() {
+  function throwConfetti() {
+    if (typeof window !== 'undefined') {
+      // Load confetti if not already loaded
+      if (!(window as any).confetti) {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js';
+        script.async = true;
+        script.onload = () => (window as any).confetti && (window as any).confetti();
+        document.body.appendChild(script);
+      } else {
+        (window as any).confetti();
+      }
+    }
+  }
   return (
   <main className="min-h-screen flex flex-col justify-between" style={{backgroundImage: 'url(/bg.JPG)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', opacity: 1}}>
       {/* Animated Gradient Hero Section */}
@@ -60,8 +74,8 @@ function Page() {
           <div className="flex flex-col items-center gap-6 w-full mt-8">
             <p className="text-lg text-white font-semibold" style={{ fontFamily: 'Noto Sans, sans-serif', fontWeight: 900 }}>How excited are you?</p>
             <div className="flex flex-col gap-4 w-full max-w-xs">
-              <button className="w-full py-2 rounded-lg bg-white/80 text-gray-700 font-bold text-base shadow hover:bg-white transition" style={{ fontFamily: 'Noto Sans, sans-serif', fontWeight: 900 }}>very much!</button>
-              <button className="w-full py-2 rounded-lg bg-white/80 text-gray-700 font-bold text-base shadow hover:bg-white transition" style={{ fontFamily: 'Noto Sans, sans-serif', fontWeight: 900 }}>i can&apos;t wait!</button>
+              <button className="w-full py-2 rounded-lg bg-white/80 text-gray-700 font-bold text-base shadow hover:bg-white transition" style={{ fontFamily: 'Noto Sans, sans-serif', fontWeight: 900 }} onClick={throwConfetti}>very much!</button>
+              <button className="w-full py-2 rounded-lg bg-white/80 text-gray-700 font-bold text-base shadow hover:bg-white transition" style={{ fontFamily: 'Noto Sans, sans-serif', fontWeight: 900 }} onClick={throwConfetti}>i can&apos;t wait!</button>
             </div>
           </div>
         </div>
