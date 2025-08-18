@@ -1,5 +1,7 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
+import PhoneForm from "../components/PhoneForm";
 
 
 function Countdown() {
@@ -83,22 +85,7 @@ function Page() {
           </div>
           {/* Phone number input for waitlist */}
           <div className="flex flex-col items-center gap-2 w-full mt-8">
-            <label htmlFor="phone" className="text-base text-white" style={{ fontFamily: 'Noto Sans, sans-serif', fontWeight: 400 }}></label>
-            <input
-              id="phone"
-              type="tel"
-              placeholder="Phone number"
-              className="w-full max-w-xs px-4 py-2 rounded-lg border border-white bg-transparent text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white"
-              style={{ fontFamily: 'Noto Sans, sans-serif', fontWeight: 400 }}
-            />
-              <div className="flex flex-row items-center justify-center gap-4 mt-2">
-                <button className="px-6 py-2 rounded-lg bg-white/90 text-gray-900 font-bold text-sm shadow hover:bg-white transition" style={{ fontFamily: 'Noto Sans, sans-serif', fontWeight: 600 }}>
-                  Join Waitlist
-                </button>
-                <button className="px-6 py-2 rounded-lg bg-transparent text-white font-bold text-sm border border-white hover:bg-white/10 transition" style={{ fontFamily: 'Noto Sans, sans-serif', fontWeight: 500 }}>
-                  Continue Shopping
-                </button>
-              </div>
+            <PhoneForm />
           </div>
         </div>
       </section>
