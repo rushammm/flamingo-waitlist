@@ -42,15 +42,16 @@ function Page() {
   function throwConfetti() {
     if (typeof window !== 'undefined') {
       // Load confetti if not already loaded
-  const win = window as unknown as { confetti?: () => void };
-  if (!win.confetti) {
+      type ConfettiWindow = Window & { confetti?: () => void };
+      const win = window as ConfettiWindow;
+      if (!win.confetti) {
         const script = document.createElement('script');
         script.src = 'https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js';
         script.async = true;
-  script.onload = () => win.confetti && win.confetti();
+        script.onload = () => win.confetti && win.confetti();
         document.body.appendChild(script);
       } else {
-  if (win.confetti) win.confetti();
+        if (win.confetti) win.confetti();
       }
     }
   }
