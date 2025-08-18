@@ -8,7 +8,7 @@ function PhoneForm() {
     const email = (form.elements.namedItem("email") as HTMLInputElement).value;
     const data = { email };
 
-    const response = await fetch("https://<flamingo-waitlist>.up.railway.app/webhook/aa06e00b-c11d-4693-a4b1-0e9d886689af", {
+    const response = await fetch("https://flamingo-waitlist.up.railway.app/webhook/aa06e00b-c11d-4693-a4b1-0e9d886689af", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
