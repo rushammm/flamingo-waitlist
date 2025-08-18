@@ -32,13 +32,22 @@ function PhoneForm() {
         className="w-full max-w-xs px-4 py-2 rounded-lg border border-white bg-transparent text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white"
         style={{ fontFamily: "Noto Sans, sans-serif", fontWeight: 400 }}
       />
-      <button
-        type="submit"
-        className="px-6 py-2 rounded-lg bg-white/90 text-gray-900 font-bold text-sm shadow hover:bg-white transition"
-        style={{ fontFamily: "Noto Sans, sans-serif", fontWeight: 900 }}
-      >
-        Join Waitlist
-      </button>
+      <div className="flex gap-2 w-full max-w-xs">
+        <button
+          type="submit"
+          className="flex-1 px-6 py-2 rounded-lg bg-white/90 text-gray-900 font-bold text-xs shadow hover:bg-white transition"
+          style={{ fontFamily: "Noto Sans, sans-serif", fontWeight: 900 }}
+        >
+          Join Waitlist
+        </button>
+        <button
+          type="button"
+          className="flex-1 px-6 py-2 rounded-lg bg-transparent border border-white text-white text-xs font-light hover:bg-white/10 transition"
+          style={{ fontFamily: "Noto Sans, sans-serif", fontWeight: 300 }}
+        >
+          Continue Shopping
+        </button>
+      </div>
     </form>
   );
 }
