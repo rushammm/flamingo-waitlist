@@ -42,14 +42,15 @@ function Page() {
   function throwConfetti() {
     if (typeof window !== 'undefined') {
       // Load confetti if not already loaded
-      if (!(window as any).confetti) {
+  const win = window as unknown as { confetti?: () => void };
+  if (!win.confetti) {
         const script = document.createElement('script');
         script.src = 'https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js';
         script.async = true;
-        script.onload = () => (window as any).confetti && (window as any).confetti();
+  script.onload = () => win.confetti && win.confetti();
         document.body.appendChild(script);
       } else {
-        (window as any).confetti();
+  if (win.confetti) win.confetti();
       }
     }
   }
@@ -60,14 +61,14 @@ function Page() {
   {/* Removed gradient and opacity layer for full image visibility */}
   <div className="rounded-xl shadow-lg p-8 w-full max-w-xl text-center relative z-10" style={{background: 'rgba(30, 30, 30, 0.35)'}}>
     {/* Import Noto Sans Black font from Google Fonts */}
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@900&display=swap" rel="stylesheet" />
+  {/* Font import moved to layout.tsx for best practice */}
     <h1
       className="text-5xl mb-2 tracking-tight"
       style={{ fontFamily: 'Noto Sans, sans-serif', fontWeight: 900, color: 'white' }}
     >
       FASAANA 
     </h1>
-             <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;900&display=swap" rel="stylesheet" />
+             {/* Font import moved to layout.tsx for best practice */}
              <p className="text-base text-white mb-6 italic tracking-wide animate-fade" style={{ fontFamily: 'Noto Sans, sans-serif', fontWeight: 300 }}>a new love-affair is about to unfold.</p>
           <Countdown />
           {/* Excitement Question */}
