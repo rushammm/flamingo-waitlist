@@ -8,7 +8,7 @@ function PhoneForm() {
     const email = (form.elements.namedItem("email") as HTMLInputElement).value;
     const data = { email };
 
-    const response = await fetch("https://n8n-production-bd7a.up.railway.app/webhook/33739177-3ac2-46e7-8f30-1c71b16bdeee", {
+    const response = await fetch("https://n8n-production-79a9.up.railway.app/webhook/eb7cde0a-2271-483a-97b2-e7fc4944cd79", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
