@@ -5,8 +5,8 @@ import PhoneForm from "../components/PhoneForm";
 
 
 function Countdown() {
-  // 19th August 2025, 9:00 PM PKT (UTC+5)
-  const launchDate = new Date("2025-08-19T16:00:00Z").getTime();
+  // 20th August 2025, 3:00 PM local time
+  const launchDate = new Date("2025-08-20T15:00:00").getTime();
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
 
